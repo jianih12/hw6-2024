@@ -12,6 +12,7 @@ window.addEventListener("load", function() {
 document.querySelector('#play').addEventListener('click', function() {
 	video.play();
 	console.log("Play Video");
+	document.querySelector('#volume').innerHTML = video.volume * 100 + "%";
 })
 
 // Pause video
@@ -59,20 +60,20 @@ document.querySelector('#mute').addEventListener("click", function() {
 	}
 })
 
-// Volume Slider
+// Volume slider
 document.querySelector('#slider').addEventListener('input', function() {
 	video.volume = this.value / 100;
 	document.querySelector("#volume").innerHTML = this.value + "%";
 	console.log("The current value is " + this.value + "%");
 })
 
-// Styled (old school)
+// Styled video (old school)
 document.querySelector('#vintage').addEventListener("click", function() {
 	video.classList.add("oldSchool");
 	console.log("Old School Style");
 })
 
-// Original
+// Original video
 document.querySelector('#orig').addEventListener("click", function() {
 	video.classList.remove("oldSchool");
 	console.log("Original Style");
